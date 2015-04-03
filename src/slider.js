@@ -87,7 +87,7 @@ angular.module('ui.slider', []).value('uiSliderConfig',{}).directive('uiSlider',
                     if (!options.range && isNaN(ngModel.$viewValue) && !(ngModel.$viewValue instanceof Array)) {
                         ngModel.$viewValue = 0;
                     }
-                    else if (options.range && !angular.isDefined(ngModel.$viewValue)) {
+                    else if (options.range && !isNaN(options.range) && !angular.isDefined(ngModel.$viewValue)) {
                             ngModel.$viewValue = [0,0];
                     }
 
